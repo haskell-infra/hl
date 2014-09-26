@@ -14,6 +14,7 @@ import Control.Monad as V
 import Data.Text as V (Text)
 import Prelude as V hiding (span,head,min,max,id,div)
 import Text.Blaze.Bootstrap as V
+import Text.Blaze.Extra as V
 import Text.Blaze.Html5 as V hiding (map,title,style,header)
 import Text.Blaze.Html5.Attributes as V hiding (span,summary,style,form,cite,label)
 import Yesod.Blaze as V

@@ -168,6 +168,11 @@ overflow: hidden;
    Home page
    */
 
+.page-home #video-anchor {
+  color: #fff;
+  text-decoration: none;
+}
+
 .page-home .navbar-collapse {
   margin-left: -30px;
 }
@@ -413,9 +418,15 @@ overflow: hidden;
 }
 
 .page-home .videos li a {
-  padding: 3px;
+  padding: 4px;
   border: 1px solid #333;
   display: inline-block;
+}
+.page-home .videos li a.current {
+  border: 1px solid #2a6496;
+}
+.page-home .videos li a:active {
+  border: 1px solid #fff;
 }
 
 /* * * * * * * * * * * * * * * * * * * *
