@@ -69,7 +69,8 @@ skeleton ptitle innerhead innerbody bodyender mroute url =
          footer url mroute
          scripts url
                  [js_jquery_js
-                 ,js_bootstrap_min_js]
+                 ,js_bootstrap_min_js
+                 ,js_home_js]
          bodyender mroute url
     -- TODO: pop this in a config file later.
     analytics =

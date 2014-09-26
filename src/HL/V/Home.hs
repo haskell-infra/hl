@@ -7,8 +7,8 @@ module HL.V.Home where
 
 import HL.V hiding (list)
 import HL.V.Code
-import HL.V.Template
 import HL.V.Home.Features
+import HL.V.Template
 
 -- | Home view.
 homeV :: [(Text, Text, Text)] -> FromBlaze App
@@ -86,24 +86,26 @@ try _ =
 -- TOOD: Should contain a list of thumbnail videos. See mockup.
 community :: (Route App -> AttributeValue) -> [(Text, Text, Text)] -> Html
 community url vids =
-  do div ! class_ "community"
-         ! background url img_community_jpg $
-         (do container
-               (row
-                  (span8
-                         (do h1
-                                "An open source community effort for over 20 years"
-                             p ! class_ "learn-more" $
-                               (a ! href (url CommunityR) $
-                                  "Learn more")))))
-     div ! class_ "videos" $
-         (container (row (span12 (ul (forM_ vids vid)))))
+  div !# "community-wrapper" $
+    do div ! class_ "community"
+           ! background url img_community_jpg $
+         do container !# "tagline"  $ row $ span8 $ do
+              h1 "An open source community effort for over 20 years"
+              p ! class_ "learn-more" $
+                a ! href (url CommunityR) $
+                  "Learn more"
+            container !# "video-description"  $ row $ span8 $ do
+              h1 $ a !# "video-anchor" $
+                "<title here>"
+              p $ a !# "video-view" $
+                "View the video now →"
+       div ! class_ "videos" $
+           (container (row (span12 (ul (forM_ vids vid)))))
   where
     vid (n,u,thumb) =
-      li
-         (a !href (toValue u)
-            !title (toValue n)$
-            (img ! src (toValue thumb)))
+      li $
+        a !. "vid-thumbnail" ! href (toValue u) ! title (toValue n) $
+          img ! src (toValue thumb)
 
 -- | Events section.
 -- TODO: Take events section from Haskell News?
