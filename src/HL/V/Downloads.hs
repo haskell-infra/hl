@@ -86,8 +86,11 @@ stackage =
            ".cabal/config file, you specify something like the following:")
      pre "remote-repo: stackage:http://www.stackage.org/stackage/<the-snapshot-hash>"
      p "(Note: any other remote-repo line should be removed or commented out)."
-     p "After that, you can install a package by merely running: "
+     p "After that, you can install a package into a sandbox by merely running: "
      pre "$ cabal update \n\
+         \$ mkdir my-project
+         \$ cd my-project
+         \$ cabal sandbox init
          \$ cabal install the-package"
      p (a ! href "http://www.stackage.org/" $ "Go to Stackage →")
 
