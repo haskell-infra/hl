@@ -90,7 +90,7 @@ community url vids =
     do div ! class_ "community"
            ! background url img_community_jpg $
          do container !# "tagline"  $ row $ span8 $ do
-              h1 "An open source community effort for over 20 years"
+              h1 "A free software community effort for over 20 years"
               p ! class_ "learn-more" $
                 a ! href (url CommunityR) $
                   "Learn more"
