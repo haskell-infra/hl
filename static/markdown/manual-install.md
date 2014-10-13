@@ -42,6 +42,9 @@ You can now update your package set:
 
     $ cabal update
 
-And install packages:
+And install packages into a sandbox so it doesn't conflict with other projects:
 
+    $ mkdir my-project
+    $ cd my-project
+    $ cabal sandbox init
     $ cabal install the-package-name
