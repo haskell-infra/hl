@@ -189,7 +189,7 @@ lazy =
 packages :: Html
 packages =
   do h2 "Packages"
-     p "Open source contribution to Haskell is very active with a wide range \
+     p "Free software contribution to Haskell is very active with a wide range \
        \of packages available on the public package servers."
      p !. "expand" $ a "Click to expand"
      div !. "expandable" $ do
