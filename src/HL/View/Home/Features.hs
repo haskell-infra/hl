@@ -27,15 +27,17 @@ purefunc :: Html ()
 purefunc =
   do h2_ "Purely functional"
      p_ "Every function in Haskell is a function in the mathematical sense (i.e., \"pure\"). \
-        \Even side-effecting IO operations are but a description of what to do, produced \
-        \by pure code. There are no statements or instructions, only expressions which \
-        \cannot mutate variables (local or global) nor access state like time or random \
-        \numbers."
+        \There are no statements or instructions that mutate global or local variables or \
+        \access external state like time or random numbers; only expressions, whose behavior \
+        \is self-contained. IO operations are described by what they are, not what they do: \
+        \actions that return values of known type, which can be used by pure code."
      p_ [class_ "expand"] (a_ "Click to expand")
      div_ [class_ "expandable"] $ do
        p_ (do "The following function takes an integer and returns an integer. "
-              "By the type it cannot do any side-effects whatsoever, it cannot\
-              \ mutate any of its arguments.")
+              "Its type guarantees that it has access to only one non-constant \
+              \value, its argument, which cannot be mutated. Side effects are \
+              \impossible; all it can do is return a result."
+          )
        haskellPre "square :: Int -> Int\n\
                   \square x = x * x"
        p_ (do "The following string concatenation is okay:")
@@ -50,31 +52,31 @@ purefunc =
               code_ "String"
               ", like "
               code_ "\"Name: \""
-              " is. So by the type system you cannot mix and \
-              \match purity with impurity.")
+              " is. The type system prevents arbitrarily mixing \
+              \purity with impurity.")
 
 statically :: Html ()
 statically =
   do h2_ "Statically typed"
      p_ "Every expression in Haskell has a type which is determined at compile time. \
-       \All the types composed together by function application have to match up. If \
-       \they don't, the program will be rejected by the compiler. Types become not \
-       \only a form of guarantee, but a language for expressing the construction \
-       \of programs."
+       \When functions are composed and applied, all the types have to match up. If \
+       \they don't, the compiler rejects the program with a type error. By guaranteeing \
+       \that every type is known and verified, types become a language for expressing \
+       \the construction of programs."
      p_ [class_ "expand"] (a_ "Click to expand")
      div_ [class_ "expandable"] $ do
        p_ "All Haskell values have a type:"
        haskellPre "char = 'a'    :: Char\n\
                   \int = 123     :: Int\n\
                   \fun = isDigit :: Char -> Bool\n"
-       p_ "You have to pass the right type of values to functions, or the compiler\
-         \ will reject the program:"
+       p_ "An attempt to pass the wrong type of value to a function causes the compiler \
+         \to reject the program:"
        rejectedHaskellPre "Type error" "isDigit 1"
        p_ "You can decode bytes into text:"
        haskellPre "bytes = Crypto.Hash.SHA1.hash \"hello\" :: ByteString\n\
                   \text = decodeUtf8 bytes               :: Text\n"
-       p_ "But you cannot decode Text, which is already a vector \
-         \of Unicode points:"
+       p_ "But attempting to decode Text, which is already a vector of Unicode points, \
+         \is rejected by the compiler:"
        rejectedHaskellPre "Type error" "doubleDecode = decodeUtf8 (decodeUtf8 bytes)"
 
 concurrent :: Html ()
