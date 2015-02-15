@@ -38,20 +38,26 @@ purefunc =
               \ mutate any of its arguments.")
        haskellPre "square :: Int -> Int\n\
                   \square x = x * x"
-       p_ (do "The following string concatenation is okay:")
-       haskellPre "\"Hello: \" ++ \"World!\" "
-       p_ (do "The following string concatenation is a type error:")
-       rejectedHaskellPre "Type error" "\"Name: \" ++ getLine"
-       p_ (do "Because "
-              code_ "getLine"
-              " has type "
-              code_ "IO String"
-              " and not "
-              code_ "String"
-              ", like "
-              code_ "\"Name: \""
-              " is. So by the type system you cannot mix and \
-              \match purity with impurity.")
+       p_ (do "The following function takes an integer, prints the list of all numbers \
+              \from zero to that number, and returns its argument. Printing is an "
+              code_ "IO"
+              " side-effect, so the function's type must indicate that it describes an "
+              code_ "IO"
+              "computation.")
+       haskellPre "printUpTo :: Int -> IO Int\n\
+                  \printUpTo x = do print [0..x]\n\
+                  \                 return x"
+       p_ (do "Since "
+              code_ "Int"
+              " and "
+              code_ "IO Int"
+              " are different types, the type system can guarantee that a function of type "
+              code_ "Int -> Int"
+              " will not trigger any surprising side-effect.")
+       haskellPre "printUpToSquare :: Int -> IO Int\n\
+                  \printUpToSquare x = printUpTo (x * x)  -- typechecks"
+       rejectedHaskellPre "Type error" "printUpToSquare :: Int -> Int\n\
+                                       \printUpToSquare x = printUpTo (x * x)"
 
 statically :: Html ()
 statically =
