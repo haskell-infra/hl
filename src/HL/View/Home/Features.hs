@@ -116,39 +116,41 @@ inference :: Html ()
 inference =
   do h2_ "Type inference"
      p_ "You don't have to explicitly write out every type in a Haskell program. \
-       \Types will be inferred by unifying every type bidirectionally. However, you \
-       \can write out types if you choose, or ask the compiler to write them for you \
-       \for handy documentation."
+       \Types will be inferred by unifying every type bidirectionally. This means \
+       \you can write a definition and ask the compiler to infer its type for \
+       \you, and you can also write a type signature and ask the compiler to help \
+       \you with the implementation."
      p_ [class_ "expand"] (a_ "Click to expand")
      div_ [class_ "expandable"] $ do
-       p_ "This example has a type signature for every binding:"
-       haskellPre "main :: IO ()\n\
-                  \main = do line :: String <- getLine\n\
-                  \          print (parseDigit line)\n\
-                  \  where parseDigit :: String -> Maybe Int\n\
-                  \        parseDigit ((c :: Char) : _) =\n\
-                  \          if isDigit c\n\
-                  \             then Just (ord c - ord '0')\n\
-                  \             else Nothing"
-       p_ "But you can just write:"
-       haskellPre "main = do line <- getLine\n\
-                  \          print (parseDigit line)\n\
-                  \  where parseDigit (c : _) =\n\
-                  \          if isDigit c\n\
-                  \             then Just (ord c - ord '0')\n\
-                  \             else Nothing"
-       p_ "You can also use inference to avoid wasting time explaining \
-         \what you want:"
-       haskellPre "do ss <- decode \"[\\\"Hello!\\\",\\\"World!\\\"]\"\n\
-                  \   is <- decode \"[1,2,3]\"\n\
-                  \   return (zipWith (\\s i -> s ++ \" \" ++ show (i + 5)) ss is)\n\
-                  \ => Just [\"Hello! 6\",\"World! 7\"]"
-       p_ "Types give a parser specification for free, the following \
-         \input is not accepted:"
-       haskellPre "do ss <- decode \"[1,2,3]\"\n\
-                  \   is <- decode \"[null,null,null]\"\n\
-                  \   return (zipWith (\\s i -> s ++ \" \" ++ show (i + 5)) ss is)\n\
-                  \ => Nothing"
+       p_ "For example, consider the following definition:"
+       haskellPre "mySnd (x, y) = y"
+       p_ (do "If you type "
+              code_ ":t mySnd"
+              " in the "
+              code_ "ghci"
+              " interactive environment, the compiler will tell you that its type is "
+              code_ "(t, t1) -> t1"
+              ". Alternatively, we can write the type signature ourselves and omit \
+              \part of the implementation:")
+       haskellPre "mySnd :: (a, b) -> b\n\
+                  \mySnd (x, y) = _hole"
+       p_ (do "Here, the compiler will tell us that we need a value of type "
+              code_ "b"
+              " to fill the hole, and that among the values which are in scope, "
+              code_ "y"
+              " is the only one which has the required type.")
+       p_ (do "Haskell can also use types to infer which of several implementations \
+              \you want. Here, the two calls to "
+              code_ "read"
+              " both receive a "
+              code_ "String"
+              " argument, but are using different implementations because they \
+              \need to return different types.")
+       haskellPre "parsedValues :: (Int, Bool)\n\
+                  \parsedValues = (read s1, read s2)\n\
+                  \  where\n\
+                  \    s1, s2 :: String\n\
+                  \    (s1, s2) = break (== ' ') \"42 True\""
 
 lazy :: Html ()
 lazy =
