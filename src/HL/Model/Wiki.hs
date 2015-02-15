@@ -28,19 +28,21 @@ import Text.XML.Cursor
 -- HTML.
 getWikiPage :: Text -> IO (Either Text (Text,Pandoc))
 getWikiPage article =
-  do request <- parseUrl ("http://wiki.haskell.org/Special:Export/" <> unpack article)
+  do request <- parseUrl ("http://wiki.haskell.org/api.php?action=query&\
+                          \prop=revisions&rvprop=content&format=xml&titles=" <>
+                          unpack article)
      withManager
        (\manager ->
           do response <- http request manager
              doc <- catch (fmap Just (responseBody response $$+- sinkDoc def))
                           (\(_::UnresolvedEntityException) -> return Nothing)
              case doc >>= parse of
-               Nothing -> return (Left "Unable to parse XML from haskell.org.")
+               Nothing -> return (Left "Unable to parse XML from wiki.haskell.org.")
                Just (title,pan) ->
                  return
-                   (fromMaybe (Left ("Unable to parse XML from haskell.org! And the \
-                                     \parser gave us an impure exception! Can you \
-                                     \believe it?"))
+                   (fromMaybe (Left ("Unable to parse XML from wiki.haskell.org! \
+                                     \And the parser gave us an impure exception! \
+                                     \Can you believe it?"))
                               (showSpoon (Right (title,pan)))))
   where
     parse doc =
@@ -50,24 +52,31 @@ getWikiPage article =
          return (title,readMediaWiki def (unpack text))
     name n =
       Name {nameLocalName = n
-           ,nameNamespace = Just "http://www.mediawiki.org/xml/export-0.6/"
+           ,nameNamespace = Nothing
            ,namePrefix = Nothing}
     getText cursor =
-      element (name "mediawiki") cursor >>=
+      element (name "api") cursor >>=
+      descendant >>=
+      element (name "query") >>=
+      descendant >>=
+      element (name "pages") >>=
       descendant >>=
       element (name "page") >>=
       descendant >>=
-      element (name "text") >>=
+      element (name "revisions") >>=
+      descendant >>=
+      element (name "rev") >>=
       descendant >>=
       content
     getTitle cursor =
-      element (name "mediawiki") cursor >>=
+      element (name "api") cursor >>=
+      descendant >>=
+      element (name "query") >>=
+      descendant >>=
+      element (name "pages") >>=
       descendant >>=
       element (name "page") >>=
-      descendant >>=
-      element (name "title") >>=
-      descendant >>=
-      content
+      attribute (name "title")
 
 -- | Make a spoon using the Show instance.
 showSpoon :: Show a => a -> Maybe a
