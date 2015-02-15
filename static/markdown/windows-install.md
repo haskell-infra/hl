@@ -1,3 +1,7 @@
+### MinGHC
+
+MinGHC is a minimal installer for GHC and cabal. 
+
 Please do the following steps:
 
 * Download the Windows installer here:
@@ -10,3 +14,9 @@ Please do the following steps:
   `cabal update`
 
   `cabal install alex happy`
+  
+### Haskell Platform
+
+The Haskell Platform collects GHC and some common libraries in an installer.
+
+[Haskell Platform for Windows](https://www.haskell.org/platform/windows.html)
