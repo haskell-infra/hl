@@ -6,7 +6,8 @@ Please do the following steps:
 
 * Download the Windows installer here:
 
-  [MinGHC installer](https://s3.amazonaws.com/download.fpcomplete.com/minghc/minghc-7.8.3.exe)
+  [MinGHC installer (32-bit)](https://s3.amazonaws.com/download.fpcomplete.com/minghc/minghc-7.10.1-i386.exe)
+  [MinGHC installer (64-bit)](https://s3.amazonaws.com/download.fpcomplete.com/minghc/minghc-7.10.1-x86_64.exe)
 
 * Run the MinGHC installer (more information). After installation, open
   a command prompt and run:
