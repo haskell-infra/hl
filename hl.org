@@ -48,7 +48,7 @@ The F# Software Foundation exists to promote, protect, and advance F#,
 and to support and foster the growth of a diverse international
 community of F# users.
 **** Haskell.org
-Haskell is an advanced purely-functional programming language. An
+Haskell is a general-purpose purely-functional programming language. An
 open-source product of more than twenty years of cutting-edge
 research, it allows rapid development of robust, concise, correct
 software. With strong support for integration with other languages,
