@@ -61,7 +61,7 @@ relativize url = walk links
 highlightBlock :: Pandoc -> Pandoc
 highlightBlock = walk codes
   where codes (CodeBlock ("",["haskell"],[]) t) =
-          RawBlock "html" (hscolour False t)
+          RawBlock "html" (hscolour False 0 t)
         codes x = x
 
 -- | Highlight code blocks and inline code samples with a decent
@@ -69,7 +69,7 @@ highlightBlock = walk codes
 highlightInline :: Pandoc -> Pandoc
 highlightInline = walk codes
   where codes (Code ("",["haskell"],[]) txt) =
-          RawInline "html" (preToCode (hscolour False txt))
+          RawInline "html" (preToCode (hscolour False 0 txt))
         codes (Code x txt) = Code x (unpack (decodeEntities (pack txt)))
         codes x = x
 
