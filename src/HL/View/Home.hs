@@ -49,7 +49,7 @@ header url =
   where branding =
           span_ [class_ "name",background url img_logo_png] "Haskell"
         summation =
-          span_ [class_ "summary"] "An advanced purely-functional programming language"
+          span_ [class_ "summary"] "A general-purpose purely-functional programming language"
         tag =
           span_ [class_ "tag"] "Declarative, statically typed code."
         sample =
