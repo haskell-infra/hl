@@ -12,14 +12,14 @@ import Language.Haskell.HsColour.CSS (hscolour)
 
 -- | Some syntax-highlighted code.
 haskellPre :: Text -> Html ()
-haskellPre = toHtmlRaw . hscolour False . unpack
+haskellPre = toHtmlRaw . hscolour False 0 . unpack
 
 -- | Some syntax-highlighted code.
 rejectedHaskellPre :: Text -> Text -> Html ()
 rejectedHaskellPre msg =
   wrap .
   toHtmlRaw .
-  hscolour False .
+  hscolour False 0 .
   unpack
   where wrap :: Html () -> Html ()
         wrap inner =
@@ -30,7 +30,7 @@ rejectedHaskellPre msg =
 
 -- | Some syntax-highlighted code.
 haskellCode :: Text -> Html ()
-haskellCode = toHtmlRaw . preToCode . hscolour False . unpack
+haskellCode = toHtmlRaw . preToCode . hscolour False 0 . unpack
 
 -- | Convert a <pre> tag code sample to <code>.
 preToCode :: [Char] -> [Char]
