@@ -19,7 +19,7 @@ tryhaskell.pages.htmlEncode = function(text,shy){
 }
 
 // The nemesis
-tryhaskell.nemesis = "chirs";
+tryhaskell.nemesis = "chris";
 
 // All pages
 tryhaskell.pages.list =
@@ -139,14 +139,14 @@ tryhaskell.pages.list =
         },
         // Tuples
         {guide:function(result){
-            if (!result) result = {value:"\"chirs\""};
+            if (!result) result = {value:"\"chris\""};
             tryhaskell.nemesis = tryhaskell.pages.htmlEncode(tryhaskell.pages.unString(result.value));
             return '<h3>' +
                 tryhaskell.pages.rmsg(["Tuples, because sometimes one value ain't enough!"]) +
                 '</h3>' +
                 "<p>Watch out for "+tryhaskell.nemesis+"! You should keep their credentials for the police.</p>" +
                 "<p>My nemesis is 28 years of age: "+
-                "<code>(28,\"chirs\")</code></p>"
+                "<code>(28,\"chris\")</code></p>"
         },
          trigger:function(result){
              return result.expr.match(/sort/) &&
@@ -155,7 +155,7 @@ tryhaskell.pages.list =
         },
         // Functions on tuples
         {guide:function(result){
-            if (!result) result = {value:"(28,\"chirs\")"};
+            if (!result) result = {value:"(28,\"chris\")"};
             var age = result.value.match(/^\(([0-9]+)+/);
             var villain = tryhaskell.pages.htmlEncode(result.value.replace(/\\"/g,'"'));
             return '<h3>' +
@@ -222,7 +222,7 @@ tryhaskell.pages.list =
 
             "<p>So if we wanted to get the age of our villain, we could do:</p>" +
 
-            "<code><span class='highlight'>let</span> villain <span class='highlight'>=</span> (28,\"chirs\") <span class='highlight'>in</span> fst villain</code>"
+            "<code><span class='highlight'>let</span> villain <span class='highlight'>=</span> (28,\"chris\") <span class='highlight'>in</span> fst villain</code>"
 
         },trigger:function(result){
             return result.expr.match(/^[ ]*let[ ]+x[ ]*=[ ]*[0-9]+[ ]*in[ ]*x[ ]*\*[ ]*x/) &&
