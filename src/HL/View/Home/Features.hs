@@ -34,7 +34,7 @@ purefunc =
      p_ [class_ "expand"] (a_ "Click to expand")
      div_ [class_ "expandable"] $ do
        p_ (do "The following function takes an integer and returns an integer. "
-              "By the type it cannot do any side-effects whatsoever, it cannot\
+              "By the type it cannot perform any side-effects whatsoever, it cannot\
               \ mutate any of its arguments.")
        haskellPre "square :: Int -> Int\n\
                   \square x = x * x"
@@ -80,8 +80,10 @@ statically =
 concurrent :: Html ()
 concurrent =
   do h2_ "Concurrent"
-     p_ "Haskell lends itself well to concurrent programming due to its explicit \
-       \handling of effects. Its flagship compiler, GHC, comes with a high-\
+     p_ "Effects such as IO and mutation are made explicit in Haskell\
+       \making concurrent programming much easier to think about than most languages; \
+       \the type of a piece of code tells you whether it is safe to run concurrently \
+       \with other code. Its flagship compiler, GHC, comes with a high-\
        \performance parallel garbage collector and light-weight concurrency \
        \library containing a number of useful concurrency primitives and \
        \abstractions."
@@ -153,11 +155,11 @@ inference =
 lazy :: Html ()
 lazy =
   do h2_ "Lazy"
-     p_ "Functions don't evaluate their arguments. This means that programs \
-       \can compose together very well, with the ability to write control \
-       \constructs (such as if/else) just by writing normal functions. The purity \
-       \of Haskell code makes it easy to fuse chains of functions together, allowing \
-       \for performance benefits."
+     p_ "Functions don't evaluate their arguments unless they need to. \
+       \This means that programs can compose together easily, with the ability to \
+       \write control constructs (such as if/else) just by writing normal functions. \
+       \The purity of Haskell code makes it easy to fuse chains of functions together, \
+       \allowing for performance benefits."
      p_ [class_ "expand"] $ a_ "Click to expand"
      div_ [class_ "expandable"] $ do
        p_ "Define control structures easily:"
@@ -253,7 +255,7 @@ packages =
           ,("pipes"            , "Streaming IO")
           ,("aeson"            , "JSON parser/printer")
           ,("process"          , "Launch processes")
-          ,("syb"              , "Generic prog.")
+          ,("syb"              , "Generic programming")
           ,("dlist"            , "Difflists")]
 
 alternating :: [t] -> [(t, t)]
