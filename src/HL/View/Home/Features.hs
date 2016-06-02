@@ -59,23 +59,39 @@ statically =
      p_ "Every expression in Haskell has a type which is determined at compile time. \
        \All the types composed together by function application have to match up. If \
        \they don't, the program will be rejected by the compiler. Types become not \
-       \only a form of guarantee, but a language for expressing the construction \
-       \of programs."
+       \only a form of guarantee, but also a shorthand for documenting proper usage."
      p_ [class_ "expand"] (a_ "Click to expand")
      div_ [class_ "expandable"] $ do
-       p_ "All Haskell values have a type:"
-       haskellPre "char = 'a'    :: Char\n\
-                  \int = 123     :: Int\n\
-                  \fun = isDigit :: Char -> Bool\n"
+       p_ "Suppose you have values with the following types:"
+       haskellPre "fileContents :: ByteString\n\
+                  \decodeUtf8   :: ByteString -> Text\n\
+                  \putStr       :: Text -> IO ()\n"
        p_ "You have to pass the right type of values to functions, or the compiler\
          \ will reject the program:"
-       rejectedHaskellPre "Type error" "isDigit 1"
-       p_ "You can decode bytes into text:"
-       haskellPre "bytes = Crypto.Hash.SHA1.hash \"hello\" :: ByteString\n\
-                  \text = decodeUtf8 bytes               :: Text\n"
-       p_ "But you cannot decode Text, which is already a vector \
-         \of Unicode points:"
-       rejectedHaskellPre "Type error" "doubleDecode = decodeUtf8 (decodeUtf8 bytes)"
+       rejectedHaskellPre "Type error" "putStr fileContents"
+       haskellPre "putStr (decodeUtf8 fileContents)  -- typechecks"
+       rejectedHaskellPre "Type error" "putStr (decodeUtf8 (decodeUtf8 fileContents))"
+       p_ "This eliminates common errors such as forgetting to decode or \
+          \double-decoding a piece of text."
+       p_ (do "Notice how the types "
+              code_ "ByteString"
+              " and "
+              code_ "ByteString -> Text"
+              " tell you that you can combine those values by applying "
+              code_ "decodeUtf8"
+              " to "
+              code_ "fileContents"
+              ". With more sophisticated types, and with a bit of experience, it's \
+              \often possible to use a Haskell library without reading any tutorial, \
+              \just by examining the types of the values it exports.")
+       p_ "A precise type is also a useful guide when implementing a function."
+       haskellPre "mySnd :: (a, b) -> b\n\
+                  \mySnd (x, y) = _hole"
+       p_ (do "Here, the compiler will tell you that you need a value of type "
+              code_ "b"
+              " to fill the hole, and that among the values which are in scope, "
+              code_ "y"
+              " is the only one which has the required type.")
 
 concurrent :: Html ()
 concurrent =
