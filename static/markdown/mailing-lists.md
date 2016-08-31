@@ -32,6 +32,15 @@ discussions. Any newbie question is welcome.
 
 [Archives](http://mail.haskell.org/pipermail/beginners/)
 
+## Community
+
+Discussions about community infrastructure and organization. Use this
+list to stay abreast of and make proposals regarding these topics.
+
+[Subscribe now →](http://mail.haskell.org/mailman/listinfo/haskell-community)
+
+[Archives](http://mail.haskell.org/pipermail/haskell-community/)
+
 ## Other mailing lists
 
 There are many lists hosted on haskell.org, though be warned some are
