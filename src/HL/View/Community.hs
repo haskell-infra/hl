@@ -23,8 +23,10 @@ communityV =
                      "Haskellers interact, talk and collaborate across several mediums \
                      \and around the world. There are places to learn, to teach, to ask questions, and to find contributors and collaborators."
                    h2_ "Online Communities and Social Resources"
-                   p_ "Haskellers are active on a number of online areas, but the most busy are below:"
-                   ul_ (online url)
+                   p_ "Haskellers are active on a number of online areas, here are the official ones:"
+                   ul_ (onlineOfficial url)
+                   p_ "Other busy communities are:"
+                   ul_ (onlineOther url)
                    h2_ "In-person Groups and Meetups"
                    p_ "There are a number of Haskell Users groups where haskellers meet to learn and code. Some are listed below:"
                    ul_ offline
@@ -41,17 +43,18 @@ communityV =
                    ul_ sigs
                    h2_ ""))))
 
-online :: (Route App -> Text) -> Html ()
-online url =
+onlineOfficial :: (Route App -> Text) -> Html ()
+onlineOfficial url =
   do li_ (a_ [href_ (url MailingListsR)] "The Haskell mailing lists")
      li_ (a_ [href_ (url IrcR)] "IRC (online chat)")
-     li_ (a_ [href_ "http://stackoverflow.com/questions/tagged?tagnames=haskell"] "StackOverflow")
-     li_ (a_ [href_ "https://plus.google.com/communities/104818126031270146189"] "Google+ community")
-     li_ (a_ [href_ "https://www.facebook.com/groups/programming.haskell/"] "Facebook community")
-     li_ (a_ [href_ "http://www.reddit.com/r/haskell"] "Reddit")
-     li_ (a_ [href_ "http://www.haskell.org/haskellwiki/Haskell"] "Wiki")
      li_ (a_ [href_ "http://planet.haskell.org/"] "The blogosphere")
-     li_ (a_ [href_ "https://gitter.im/haskell-chat"] "Haskell Gitter Community Chat")
+     li_ (a_ [href_ "http://www.haskell.org/haskellwiki/Haskell"] "Wiki")
+
+onlineOther :: (Route App -> Text) -> Html ()
+onlineOther url =
+  do li_ (a_ [href_ "http://stackoverflow.com/questions/tagged?tagnames=haskell"] "StackOverflow")
+     li_ (a_ [href_ "http://www.reddit.com/r/haskell"] "Reddit")
+     li_ (a_ [href_ "https://www.facebook.com/groups/programming.haskell/"] "Facebook community")
 
 offline :: Html ()
 offline =
