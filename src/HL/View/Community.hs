@@ -26,7 +26,7 @@ communityV =
                    p_ "Haskellers are active on a number of online areas, here are the official ones:"
                    ul_ (onlineOfficial url)
                    p_ "Other busy communities are:"
-                   ul_ (onlineOther url)
+                   ul_ onlineOther
                    h2_ "In-person Groups and Meetups"
                    p_ "There are a number of Haskell Users groups where haskellers meet to learn and code. Some are listed below:"
                    ul_ offline
@@ -50,8 +50,8 @@ onlineOfficial url =
      li_ (a_ [href_ "http://planet.haskell.org/"] "The blogosphere")
      li_ (a_ [href_ "http://www.haskell.org/haskellwiki/Haskell"] "Wiki")
 
-onlineOther :: (Route App -> Text) -> Html ()
-onlineOther url =
+onlineOther :: Html ()
+onlineOther =
   do li_ (a_ [href_ "http://stackoverflow.com/questions/tagged?tagnames=haskell"] "StackOverflow")
      li_ (a_ [href_ "http://www.reddit.com/r/haskell"] "Reddit")
      li_ (a_ [href_ "https://www.facebook.com/groups/programming.haskell/"] "Facebook community")
