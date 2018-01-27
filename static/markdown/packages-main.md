@@ -11,7 +11,7 @@ You can install a package using cabal by running:
 
 Note that if you are not in a sandbox, this will install the package globally, which is often not what you want, so it is recommended to set up sandboxes in your project directory by running `cabal sandbox init`.
 
-[Go to Hackage →](https://hackage.haskell.org/packages/)
+[Go to Hackage →](https://hackage.haskell.org)
 
 ### LTS Haskell
 

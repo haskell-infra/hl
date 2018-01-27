@@ -3,7 +3,7 @@
 <br>
 
 <div style="text-align:center;">
-  <a href="https://docs.haskellstack.org/en/stable/README/">
+  <a href="https://docs.haskellstack.org/en/stable/install_and_upgrade/">
     <button type="button" class="btn btn-lg btn-primary">Download Stack</button>
   </a>
   <a href="https://www.haskell.org/platform/">
