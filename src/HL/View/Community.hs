@@ -53,6 +53,7 @@ online url =
      li_ (a_ [href_ "http://planet.haskell.org/"] "The blogosphere")
      li_ (a_ [href_ "https://haskellweekly.news/"] "Haskell Weekly e-mail newsletter")
      li_ (a_ [href_ "https://gitter.im/haskell-chat"] "Haskell Gitter Community Chat")
+     li_ (a_ [href_ "https://wiki.haskell.org/Haskell_Communities_and_Activities_Report"] "Haskell Communities and Activities Report")
 
 offline :: Html ()
 offline =
