@@ -19,9 +19,10 @@ getHomeVideos =
 -- concerned).
 vids :: [(Text,Text, Text)]
 vids =
-  [("Functional Reactive Programming for Musical User Interfaces by Paul Hudak","https://vimeo.com/96744621","https://i.vimeocdn.com/video/476988542_150x84.jpg")
-  ,("Conquering Hadoop with Haskell and Ozgun Ataman","http://vimeo.com/90189610","https://i.vimeocdn.com/video/469235326_150x84.jpg")
-  ,("Using Lenses to Structure State with Nathan Bouscal","http://vimeo.com/90184695","https://i.vimeocdn.com/video/469227196_150x84.jpg")
-  ,("GHCJS: Bringing Haskell to the Browser, by Luite Stegeman","http://vimeo.com/80895330","https://i.vimeocdn.com/video/456929997_150x84.jpg")
-  ,("Jürgen Cito presents todo-example, a lightweight webapp in Haskell","http://vimeo.com/80863583","https://i.vimeocdn.com/video/456929840_150x84.jpg")
-  ,("Abstractions for the Functional Roboticist with Anthony Cowley","http://vimeo.com/77164337","https://i.vimeocdn.com/video/452269027_150x84.jpg")]
+  [("Escape from the ivory tower: The Haskell journey, by Simon Peyton-Jones", "https://www.youtube.com/watch?v=re96UgMk6GQ", "https://i1.ytimg.com/vi/re96UgMk6GQ/mqdefault.jpg")
+  ,("Haskell taketh away: limiting side effects for parallel programming, by Ryan Newton", "https://www.youtube.com/watch?v=lC5UWG5N8oY", "https://i1.ytimg.com/vi/lC5UWG5N8oY/mqdefault.jpg")
+  ,("Production Haskell, by Reid Draper", "https://www.youtube.com/watch?v=AZQLkkDXy68", "https://i1.ytimg.com/vi/AZQLkkDXy68/mqdefault.jpg")
+  ,("Haskell Amuse-Bouche, by Mark Lentczner", "https://www.youtube.com/watch?v=b9FagOVqxmI", "https://i1.ytimg.com/vi/b9FagOVqxmI/mqdefault.jpg")
+  ,("Haskell is Not For Production and Other Tales, by Katie Miller", "https://www.youtube.com/watch?v=mlTO510zO78", "https://i1.ytimg.com/vi/mlTO510zO78/mqdefault.jpg")
+  ,("Validation with Smart Constructors, from Haskell at Work", "https://www.youtube.com/watch?v=lxjIUWGMUqE", "https://i1.ytimg.com/vi/lxjIUWGMUqE/mqdefault.jpg")
+  ]
