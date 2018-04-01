@@ -11,7 +11,7 @@ executables and so forth manually.
 Or you can even install from source, for which
 [there is documentation](https://ghc.haskell.org/trac/ghc/wiki/Building).
 
-[Download GHC now →](https://www.haskell.org/ghc/download)
+[Download GHC now →](https://www.haskell.org/ghc/download.html)
 
 ### 2. Install Cabal-install
 
