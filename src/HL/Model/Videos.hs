@@ -24,5 +24,5 @@ vids =
   ,("Production Haskell, by Reid Draper", "https://www.youtube.com/watch?v=AZQLkkDXy68", "https://i1.ytimg.com/vi/AZQLkkDXy68/mqdefault.jpg")
   ,("Haskell Amuse-Bouche, by Mark Lentczner", "https://www.youtube.com/watch?v=b9FagOVqxmI", "https://i1.ytimg.com/vi/b9FagOVqxmI/mqdefault.jpg")
   ,("Haskell is Not For Production and Other Tales, by Katie Miller", "https://www.youtube.com/watch?v=mlTO510zO78", "https://i1.ytimg.com/vi/mlTO510zO78/mqdefault.jpg")
-  ,("Validation with Smart Constructors, from Haskell at Work", "https://www.youtube.com/watch?v=lxjIUWGMUqE", "https://i1.ytimg.com/vi/lxjIUWGMUqE/mqdefault.jpg")
+  ,("Your First Web Application with Spock, by Oskar Wickström", "https://www.youtube.com/watch?v=Orm-jIIgVD0", "https://i1.ytimg.com/vi/Orm-jIIgVD0/mqdefault.jpg")
   ]
