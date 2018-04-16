@@ -61,6 +61,7 @@ offline =
      li_ (a_ [href_ "http://www.meetup.com/Bay-Area-Haskell-Users-Group/"] "Bay Area Haskell Users Group")
      li_ (a_ [href_ "http://www.meetup.com/Boston-Haskell/"] "Boston Haskell")
      li_ (a_ [href_ "http://www.meetup.com/berlinhug/"] "Berlin Haskell Users Group")
+     li_ (a_ [href_ "http://www.meetup.com/Brisbane-Functional-Programming-Group/"] "Brisbane Functional Programming Group")
      li_ (a_ [href_ "http://ChicagoHaskell.com/"] "Chicago Haskell")
      li_ (a_ [href_ "https://www.meetup.com/haskell-dublin-meetup/"] "Dublin Haskell Meetup")
      li_ (a_ [href_ "http://www.haskell-ita.it/"] "Italy Haskell Users Group")
@@ -83,6 +84,7 @@ commercialConferences :: Html ()
 commercialConferences =
   do li_ (a_ [href_ "http://cufp.org/"] "Commercial Users of Functional Programming (Roving)")
      li_ (a_ [href_ "http://www.lambdajam.com/"] "LambdaJam (Chicago, IL, USA)")
+     li_ (a_ [href_ "http://lambdajam.yowconference.com.au/"] "YOW! LambdaJam (Sydney, AU)")
      li_ (a_ [href_ "http://functionalconf.com/"] "Functional Conf (Bangalore, IN)")
      li_ (a_ [href_ "http://www.lambdacon.org/"] "LambdaCon (Bologna, IT)")
      li_ (a_ [href_ "http://bobkonf.de/"] "BOB (Berlin, DE)")
@@ -90,6 +92,7 @@ commercialConferences =
      li_ (a_ [href_ "https://skillsmatter.com/conferences/1907-haskell-exchange-2014"] "Skills Matter's Haskell eXchange (London, GB)")
      li_ (a_ [href_ "http://www.degoesconsulting.com/lambdaconf-2015/"] "LambdaConf (Boulder, CO, USA)")
      li_ (a_ [href_ "http://composeconference.org"] "Compose :: Conference (NY, NY, USA)")
+     li_ (a_ [href_ "http://composeconference.org"] "Compose :: Melbourne (Melbourne, VIC, AU)")
 
 hackathons :: Html ()
 hackathons =
