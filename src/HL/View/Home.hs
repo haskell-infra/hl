@@ -173,7 +173,7 @@ sponsors =
                          (p_ (do strong_ (a_ [href_ "http://digitalasset.com/"] "Digital Asset")
                                  " provides Distributed Ledger solutions for financial institutions globally. They have developed a pure, typed, functional, domain specific language for writing contracts, called DAML.  They are a proud sponsor of the "
                                  (a_ [href_ "https://summer.haskell.org/"] "Summer of Haskell")
-                                 "and contribute broadly to the Haskell community.")))
+                                 " and contribute broadly to the Haskell community.")))
          row_ (do span6_ [class_ "col-sm-6"]
                          (p_ (do strong_ (a_ [href_ "https://asahi-net.jp/en/"] "Asahi Net")
                                  " is a Japanese Internet service provider that has been running stable systems for over 25 years.  They are a proud sponsor of the Summer of Haskell, and contribute to the Japanese Haskell community."))
