@@ -164,30 +164,5 @@ sponsors =
                                  " has teamed up to provide Haskell.org with redundant, scalable object-storage \
                                  \through their Dream Objects service." )))
          row_ (do span6_ [class_ "col-sm-6"]
-                         (p_ (do strong_ (a_ [href_ "http://awakenetworks.com/"] "Awake Networks")
-                                 " is building a next generation network security and analytics platform. They are \
-                                 \a proud sponsor of the "
-                                 (a_ [href_ "https://summer.haskell.org/"] "Summer of Haskell")
-                                 " and contribute broadly to the Haskell community." ))
-                  span6_ [class_ "col-sm-6"]
-                         (p_ (do strong_ (a_ [href_ "http://digitalasset.com/"] "Digital Asset")
-                                 " provides Distributed Ledger solutions for financial institutions globally. They have developed a pure, typed, functional, domain specific language for writing contracts, called DAML.  They are a proud sponsor of the "
-                                 (a_ [href_ "https://summer.haskell.org/"] "Summer of Haskell")
-                                 "and contribute broadly to the Haskell community.")))
-         row_ (do span6_ [class_ "col-sm-6"]
-                         (p_ (do strong_ (a_ [href_ "https://asahi-net.jp/en/"] "Asahi Net")
-                                 " is a Japanese Internet service provider that has been running stable systems for over 25 years.  They are a proud sponsor of the Summer of Haskell, and contribute to the Japanese Haskell community."))
-                  span6_ [class_ "col-sm-6"]
-                         (p_ (do strong_ (a_ [href_ "http://fugue.co/"] "Fugue Inc.")
-                                 " radically simplifies cloud operations with its software-defined system for dynamically orchestrating and enforcing cloud infrastructure at scale.  Fugue uses Haskell in its product and is proud to sponsor Summer of Haskell.")))
-
-         row_ (do span6_ [class_ "col-sm-6"]
-                         (p_ (do strong_ (a_ [href_ "https://iohk.io/"] "IOHK")
-                                 "  is a technology company committed to using peer-to-peer technologies to provide financial services to the three billion people who don't have them.  They implement our first-principles cryptographic research in Haskell and are committed to the development of the Haskell ecosystem. IOHK is a sponsor of the Summer of Haskell."))
-                  span6_ [class_ "col-sm-6"]
-                         (p_ (do strong_ (a_ [href_ "https://www.tweag.io"] "Tweag I/O")
-                                 "  is a network of software innovation labs across Europe. They have shipped Haskell in anything from tiny web services to large high-performance compute clusters with custom hardware. Tweag is a sponsor of Summer of Haskell." )))
-
-         row_ (do span6_ [class_ "col-sm-6"]
                          (p_ (do strong_ (a_ [href_ "https://webmon.com"] "Webmon")
                                  " provides monitoring and escalation for core haskell.org infrastructure." )))
