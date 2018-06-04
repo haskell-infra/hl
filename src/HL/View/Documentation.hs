@@ -45,6 +45,7 @@ books =
       ,("Haskell: The Craft of Functional Programming","http://www.haskellcraft.com/craft3e/Home.html")
       ,("The Haskell School of Music","http://haskell.cs.yale.edu/wp-content/uploads/2015/03/HSoM.pdf")
       ,("Developing Web Applications with Haskell and Yesod","http://www.yesodweb.com/book")]
+      ,("Get Programming with Haskell","https://www.manning.com/books/get-programming-with-haskell")]
 
 courses :: Html ()
 courses =
