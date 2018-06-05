@@ -93,6 +93,7 @@ commercialConferences =
      li_ (a_ [href_ "http://www.degoesconsulting.com/lambdaconf-2015/"] "LambdaConf (Boulder, CO, USA)")
      li_ (a_ [href_ "http://composeconference.org"] "Compose :: Conference (NY, NY, USA)")
      li_ (a_ [href_ "http://composeconference.org"] "Compose :: Melbourne (Melbourne, VIC, AU)")
+     li_ (a_ [href_ "http://www.curry-on.org/"] "Curry On (Europe, roving)")
 
 hackathons :: Html ()
 hackathons =
