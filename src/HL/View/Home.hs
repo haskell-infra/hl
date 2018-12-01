@@ -23,8 +23,8 @@ homeV vids =
           br_ [class_ "hidden-xs hidden-sm"]
           try url
           br_ []
-          community url vids
           features
+          community url vids
           br_ []
           sponsors
           transition
