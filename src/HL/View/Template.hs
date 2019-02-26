@@ -156,7 +156,7 @@ footer url _r =
   where hlCopy =
           do container_
                        (row_ (do span3_ [class_ "col-sm-4 col-md-3"]
-                                        (span_ [class_ "item"] "\169 2014\8211\&2018 haskell.org")
+                                        (span_ [class_ "item"] "\169 2014\8211\&2019 haskell.org")
                                  span12_ [class_ "col-xs-12 visible-xs"] (br_ [])
                                  span8_ [class_ "col-sm-4 col-md-6 text-center"]
                                         (do br_ [class_ "visible-xs"]
