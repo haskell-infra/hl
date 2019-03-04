@@ -1,3 +1,8 @@
+Outdated Repository
+=====
+You probably want the new repository at https://github.com/haskell-infra/www.haskell.org
+
+
 hl
 =====
 
