@@ -62,6 +62,7 @@ instance Human (Route App) where
       StaticR{}            -> "Static"
       DownloadsR           -> "Downloads"
       DownloadsForR os     -> "Downloads for " <> toHuman os
+      PackagesR           -> "Packages"
 
 instance Slug (Route App) where
   toSlug r =
@@ -76,3 +77,7 @@ instance Slug (Route App) where
       StaticR{}         -> "static"
       DownloadsR        -> "downloads"
       DownloadsForR{}   -> "downloads"
+      PackagesR        -> "packages"
+
+
+

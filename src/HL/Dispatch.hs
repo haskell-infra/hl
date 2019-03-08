@@ -13,6 +13,7 @@ import HL.Controller.Community
 import HL.Controller.Documentation
 import HL.Controller.Donate
 import HL.Controller.Downloads
+import HL.Controller.Packages
 import HL.Controller.Home
 import HL.Controller.Irc
 import HL.Controller.MailingLists
@@ -21,3 +22,4 @@ import HL.Foundation
 import Yesod.Core.Dispatch
 
 mkYesodDispatch "App" resourcesApp
+
